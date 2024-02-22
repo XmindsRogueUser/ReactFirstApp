@@ -16,8 +16,8 @@
 .mainDiv {
   background-color: #222a3a;
   min-height: 10vh;
-  display: flex;
-  flex-direction: column;
+  display: inline-flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -37,4 +37,28 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.hiddenItem {
+  visibility: hidden;
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.visibleItem {
+  visibility: visible;
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.logoImg {
+  width: 5vh;
+  height: 5vh;
+}
+
+.itemImage {
+  vertical-align: middle;
+  padding-left: 20px;
 }

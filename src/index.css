@@ -4,8 +4,12 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  background: -webkit-linear-gradient(to right, hwb(342 48% 3%), hsl(172, 88%, 55%));
-  background: linear-gradient(to right, #4ad4a6, #19b957);
+  background: -webkit-linear-gradient(
+    to right,
+    hwb(342 48% 3%),
+    hsl(172, 88%, 55%)
+  );
+  background: linear-gradient(to bottom, #7ddfe6, #1994b9);
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
 }

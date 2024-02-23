@@ -13,6 +13,11 @@
   }
 }
 
+.shadow {
+  background-color: #222a3a;
+  box-shadow: var(--bs-box-shadow) !important;
+}
+
 .mainDiv {
   background-color: #222a3a;
   min-height: 15vh;
@@ -29,8 +34,8 @@
   margin-top: 2vh;
   margin-right: 35vh;
   margin-left: 35vh;
-  display:flex;
-  color: #2b2a2a;
+  display: flex;
+  color: #222a3a;
   text-align: justify;
 }
 
@@ -45,13 +50,14 @@
 
 .hiddenItem {
   visibility: hidden;
+  color: rgb(231, 229, 229);
   display: flex;
   margin-top: 0;
   margin-bottom: 1rem;
 }
 
 .visibleItem {
-  visibility: visible;
+  align-self: center;
   display: flex;
   margin-top: 0;
   margin-bottom: 1rem;

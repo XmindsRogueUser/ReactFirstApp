@@ -31,9 +31,9 @@ function ProductDetails(props) {
       <span style={{ padding: "8px 14px", fontSize: 13 }}>{quantity}</span>
       <Button eventHandler={incrementQuantity}>+</Button>
       {getBadge(props.isAvailable)}
-      <h7 className="font-weight-bold my-2" style={{ marginLeft: 30 }}>
+      <h6 className="font-weight-bold my-2" style={{ marginLeft: 30 }}>
         Total: ${props.price * quantity}
-      </h7>
+      </h6>
     </div>
   );
 }

@@ -9,9 +9,10 @@ function ProductList(props) {
             {props.newProductList.length} flavours available
           </h6>
         </span>
-        {props.newProductList.map((item) => {
+        {props.newProductList.map((item, index) => {
           return (
             <Products
+              key={index}
               id={item.pID}
               name={item.pName}
               description={item.desc}

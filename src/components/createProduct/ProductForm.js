@@ -8,34 +8,9 @@ function ProductForm(props) {
     availability: false,
     image: "",
   });
-
-  let nameInputHandler = (event) => {
-    //updateName(event.target.value)
-    // updateUserInput({...userInput, name: event.target.value});
-    // console.log(event.target.value);
-    updateUserInput((previous) => {
-      return { ...previous, name: event.target.value };
-    });
-  };
-  let priceInputHandler = (event) => {
-    updateUserInput((previous) => {
-      return { ...previous, price: event.target.value };
-    });
-  };
-  let descInputHandler = (event) => {
-    updateUserInput((previous) => {
-      return { ...previous, desc: event.target.value };
-    });
-  };
-  let availabilityInputHandler = (event) => {
-    updateUserInput((previous) => {
-      return { ...previous, availability: event.target.checked };
-    });
-  };
-  let imageInputHandler = (event) => {
-    updateUserInput((previous) => {
-      return { ...previous, image: event.target.value };
-    });
+  let inputHandler = (event) => {
+    const { name, value } = event.target;
+    updateUserInput((previous) => ({ ...previous, [name]: value }));
   };
 
   let createProductEventListener = (event) => {
@@ -65,9 +40,10 @@ function ProductForm(props) {
           type="text"
           className="form-control"
           id="name"
+          name="name"
           placeholder="Product Name"
           value={userInput.name}
-          onChange={nameInputHandler}
+          onChange={inputHandler}
         />
       </div>
       <div className="col-md-6">
@@ -79,8 +55,9 @@ function ProductForm(props) {
           className="form-control"
           id="price"
           placeholder="Product Price"
+          name="price"
           value={userInput.price}
-          onChange={priceInputHandler}
+          onChange={inputHandler}
         />
       </div>
 
@@ -89,10 +66,11 @@ function ProductForm(props) {
         <input
           type="text"
           className="form-control"
+          name="desc"
           id="description"
           placeholder="Product Description"
           value={userInput.desc}
-          onChange={descInputHandler}
+          onChange={inputHandler}
         />
       </div>
 
@@ -101,9 +79,10 @@ function ProductForm(props) {
           className="form-check-input"
           type="checkbox"
           role="switch"
+          name="availability"
           id="isAvailable"
           checked={userInput.availability}
-          onChange={availabilityInputHandler}
+          onChange={inputHandler}
         />
         <label className="form-check-label" htmlFor="isAvailable">
           Is product available in stock?
@@ -115,9 +94,10 @@ function ProductForm(props) {
         <input
           type="file"
           className="form-control"
+          name="image"
           id="select-image"
           value={userInput.image}
-          onChange={imageInputHandler}
+          onChange={inputHandler}
         />
       </div>
 

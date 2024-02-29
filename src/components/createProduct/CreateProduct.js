@@ -14,6 +14,7 @@ function CreateProduct(props) {
           backgroundColor: "#222a3a",
           padding: "10px 20px",
           marginBottom: "20px",
+          borderRadius: "5px",
         }}
       >
         <ProductForm createProduct={onCreateProduct}></ProductForm>

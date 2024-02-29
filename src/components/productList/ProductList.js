@@ -1,7 +1,17 @@
 import Products from "./Products.js";
 
 function ProductList(props) {
-  return (
+  return props.newProductList.length === 0 ? (
+    <div>
+      <ul className="list-group shadow">
+        <span className={"visibleItem"}>
+          <h6 style={{ color: "white", margin: "7px" }}>
+            No products to display
+          </h6>
+        </span>
+      </ul>
+    </div>
+  ) : (
     <div>
       <ul className="list-group shadow">
         <span className={"visibleItem"}>

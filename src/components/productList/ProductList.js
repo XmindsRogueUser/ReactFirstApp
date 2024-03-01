@@ -1,8 +1,9 @@
+import React from "react";
 import Products from "./Products.js";
 
 function ProductList(props) {
   return props.newProductList.length === 0 ? (
-    <div>
+    <React.Fragment>
       <ul className="list-group shadow">
         <span className={"visibleItem"}>
           <h6 style={{ color: "white", margin: "7px" }}>
@@ -10,9 +11,9 @@ function ProductList(props) {
           </h6>
         </span>
       </ul>
-    </div>
+    </React.Fragment>
   ) : (
-    <div>
+    <React.Fragment>
       <ul className="list-group shadow">
         <span className={"visibleItem"}>
           <h6 style={{ color: "white", margin: "7px" }}>
@@ -33,7 +34,7 @@ function ProductList(props) {
           );
         })}
       </ul>
-    </div>
+    </React.Fragment>
   );
 }
 export default ProductList;

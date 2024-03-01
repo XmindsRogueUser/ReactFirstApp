@@ -1,9 +1,11 @@
 import "./app.css";
 import ProductList from "./components/productList/ProductList.js";
 import CreateProduct from "./components/createProduct/CreateProduct.js";
+import RefsDemo from "./components/RefsDemo.js";
 import { useState } from "react";
 const logo = require("./images/snow.png");
 
+// let items = []
 let items = [
   {
     pID: 1,
@@ -59,6 +61,7 @@ function App() {
         <p className="mainPara">{msg}</p>
       </span>
       <div className="col-lg-8 mx-auto">
+        <RefsDemo></RefsDemo>
         <CreateProduct createProduct={onCreateProduct}></CreateProduct>
         <ProductList newProductList={newProductList}></ProductList>
       </div>

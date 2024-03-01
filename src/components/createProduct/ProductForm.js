@@ -5,7 +5,7 @@ function ProductForm(props) {
     name: "",
     price: 0,
     desc: "",
-    availability: false,
+    isAvailable: false,
     image: "",
   });
   let inputHandler = (event) => {
@@ -19,16 +19,9 @@ function ProductForm(props) {
       pName: userInput.name,
       price: Number(userInput.price),
       desc: userInput.desc,
-      availability: Boolean(userInput.availability),
+      isAvailable: Boolean(userInput.isAvailable),
       image: userInput.image,
     };
-    updateUserInput({
-      name: "",
-      price: 0,
-      desc: "",
-      availability: false,
-      image: "",
-    });
     props.createProduct(product);
   };
 
@@ -79,7 +72,7 @@ function ProductForm(props) {
           className="form-check-input"
           type="checkbox"
           role="switch"
-          name="availability"
+          name="isAvailable"
           id="isAvailable"
           checked={userInput.availability}
           onChange={inputHandler}

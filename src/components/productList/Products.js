@@ -2,7 +2,7 @@ import ProductDetails from "./ProductDetails.js";
 
 function Products(props) {
   return (
-    <div>
+    <>
       <li className="list-group-item">
         <div className="media align-items-lg-center flex-cloumn flex-lg-row p-3 d-flex">
           <div className="media-body order-2 order-lg-1">
@@ -22,7 +22,7 @@ function Products(props) {
           ></img>
         </div>
       </li>
-    </div>
+    </>
   );
 }
 

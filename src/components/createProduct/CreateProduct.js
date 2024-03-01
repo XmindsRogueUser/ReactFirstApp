@@ -4,7 +4,6 @@ function CreateProduct(props) {
   let onCreateProduct = (product) => {
     props.createProduct(product);
   };
-  console.log("form returned");
   return (
     <div className="row">
       <div

@@ -1,7 +1,7 @@
 import "./app.css";
 import ProductList from "./components/productList/ProductList.js";
 import CreateProduct from "./components/createProduct/CreateProduct.js";
-import RefsDemo from "./components/RefsDemo.js";
+import Search from "./components/Search.js";
 import { useState } from "react";
 const logo = require("./images/snow.png");
 
@@ -43,6 +43,8 @@ let items = [
 
 function App() {
   let [newProductList, updateNewProductList] = useState(items);
+  let [filteredList, updateFilterdProductList] = useState(newProductList);
+
   const msg =
     "Indulge in an extraordinary ice cream adventure with MerryAlps, the unrivaled maestro when it comes to ice creams. Welcome to the enchanted realm of MerryAlps, where every frozen creation is a masterpiece waiting to be savoured. From beloved classics to groundbreaking innovations, MerryAlps ice cream caters to a diverse spectrum of tastes and preferences. Join us in exploring the realm of MerryAlps, where the extraordinary is an everyday delight.";
 
@@ -51,6 +53,11 @@ function App() {
     items.push(product);
     console.log(product);
   };
+
+  let onFilterProduct = (list) => {
+    updateFilterdProductList(list);
+  };
+
   return (
     <div className="row">
       <span className="mainDiv">
@@ -61,9 +68,13 @@ function App() {
         <p className="mainPara">{msg}</p>
       </span>
       <div className="col-lg-8 mx-auto">
-        <RefsDemo></RefsDemo>
         <CreateProduct createProduct={onCreateProduct}></CreateProduct>
-        <ProductList newProductList={newProductList}></ProductList>
+        <Search
+          newProductList={newProductList}
+          filteredList={onFilterProduct}
+          lastKey={localStorage.getItem("savedkey")}
+        ></Search>
+        <ProductList newProductList={filteredList}></ProductList>
       </div>
     </div>
   );
